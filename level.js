@@ -46,7 +46,7 @@ function Leveltext() {
 
 function addLevelClickEventListener() {
     const cvs = document.getElementById("myCanvas");
-    cvs.addEventListener("click", e => {
+    cvs.addEventListener("click", levelClickEvent = e => {
         const rect = e.target.getBoundingClientRect();
 
         // ブラウザ上での座標を求める
@@ -85,18 +85,18 @@ function addLevelClickEventListener() {
             && (common.y <= canvasY && canvasY <= common.y + common.h)  // 縦方向の判定
         if (clickEasy) { 
             // alert('click easy!'); 
+            cvs.removeEventListener('click', levelClickEvent);
             gamelevel = 1;
-            cvs.removeEventListener('click', e);
             game();
         }else if(clickNormal) {
             // alert('click normal!'); 
+            cvs.removeEventListener('click', levelClickEvent);
             gamelevel = 2;
-            cvs.removeEventListener('click', e);
             game();
         }else if(clickHard) {
             // alert('click hard!'); 
+            cvs.removeEventListener('click', levelClickEvent);
             gamelevel = 3;
-            cvs.removeEventListener('click', e);
             game();
 
         }

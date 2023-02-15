@@ -3,26 +3,25 @@
 function game(){
     clearCanvas();
     init();
-    drawBox();
+    drawBox(canvas.width / 2 - rectSize / 2, canvas.height / 2 - rectSize / 2);
     startGame();
 }
 
 
 function init() {
     let ind = randInt(spawn.length);
-    x = spawn[ind][0];
-    y = spawn[ind][1];
+    [x, y] = spawn[ind];
     dx = ballSpeed * direction[ind][0];
     dy = ballSpeed * direction[ind][1];
     s_wait = 15;
     e_wait = 25;
-    count++;
+    ballCount++;
 }
 
 
 function startGame() {
     answer = randInt(gamelevel * 5);
-    timer = setInterval(draw, 30);
+    drawBallTimer = setInterval(draw, 30);
 }
 
 
@@ -38,9 +37,9 @@ function drawBall() {
     ctx.closePath();
 }
 
-function drawBox() {
+function drawBox(x,y) {
     //描画開始
-    drawsq(canvas.width / 2 - rectSize / 2, canvas.height / 2 - rectSize / 2, rectSize, rectSize, 200, "#a0d8ef");
+    drawsq(x, y, rectSize, rectSize, 200, "#a0d8ef");
 }
 
 function waitToStart() {
@@ -63,21 +62,20 @@ function draw() {
     //4つの座標で囲われた範囲内の内容がすべて消去される
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
-    drawBox();
+    drawBox(canvas.width / 2 - rectSize / 2, canvas.height / 2 - rectSize / 2);
+
     waitToStart();
 
     if (ballIsInTheBox()) {
         if (e_wait--) {
             x -= dx;
             y -= dy;
-        } else if (count < answer) {
+        } else if (ballCount < answer) {
             init();
         } else {
-            clearInterval(timer);
+            clearInterval(drawBallTimer);
+            ballCount = 0;
             quiz();
         }
     }
-
 }
-
-

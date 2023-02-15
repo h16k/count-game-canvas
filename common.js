@@ -15,9 +15,11 @@ function clearCanvas() {
 
 }
 
-function header(text) {
-    drawsq(1500, 500, 3000, 1000, 200, "#a0d8ef");
-    drawsq(1550, 550, 2900, 900, 150, "#ffffff");
+function header(text, line = true) {
+    if(line){
+        drawsq(1500, 500, 3000, 1000, 200, "#a0d8ef");
+        drawsq(1550, 550, 2900, 900, 150, "#ffffff");
+    }
     let fontSize = 400;
     ctx.clearRect(1600, 600, 2800, 800, 100);
     //文字のスタイル（大きさ、フォント）を指定

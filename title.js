@@ -35,7 +35,7 @@ function drawTitleText() {
 
 function addTitleClickEventListener() {
     const cvs = document.getElementById("myCanvas");
-    cvs.addEventListener("click", e => {
+    cvs.addEventListener("click", titleClickEvent = e => {
         const rect = e.target.getBoundingClientRect();
 
         // ブラウザ上での座標を求める
@@ -61,7 +61,7 @@ function addTitleClickEventListener() {
             && (title.y <= canvasY && canvasY <= title.y + title.h)  // 縦方向の判定
 
         if (clickTitle) {
-            cvs.removeEventListener('click', e);
+            cvs.removeEventListener('click', titleClickEvent);
             level();
         }
     });
