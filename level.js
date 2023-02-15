@@ -18,7 +18,7 @@ function drawLevel() {
 function Leveltext() {
     let levels = ["Easy", "Normal", "Hard"];
     let levelx = [680, 2500, 4650]
-    let nums = ["0~4", "5~9", "10~14"];
+    let nums = ["1~4", "1~9", "1~14"];
     let numx = [850, 2850, 4750]
     let arcx = [950, 2780, 4550]
     ctx.fillStyle = '#ffffff';
