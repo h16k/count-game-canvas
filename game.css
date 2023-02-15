@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'ZenMaruGothicRegular';
+    src: url('assets/fonts/ZenMaruGothic-Regular.ttf');
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'ZenMaruGothicRegular';
+
+}
+
+canvas {
+    background: #fff;
+    display: block;
+    margin: 0 auto;
+}

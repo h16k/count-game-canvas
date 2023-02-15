@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            display: block;
+            margin: 0 auto;
+            padding: 5vh;
+            width: 40%;
+
+        }
+
+        #title {
+            width: 100%;
+        }
+        .gamestart {
+            width: 80%;
+        }
+
+        #onclick {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="assets/image/title.png" alt="title" id="title">
+    </div>
+    <div class="toggle">
+        <img class="gamestart" src="assets/image/gamestartonclick.png" alt="title" id="onclick">
+        <img class="gamestart" src="assets/image/gamestart.png" alt="title" id="default">
+    </div>
+    <script>
+        $(".toggle").on("click", function () {
+            $("#default").toggle();
+            $("#onclick").toggle();
+        });
+    </script>
+</body>
+
+</html>
