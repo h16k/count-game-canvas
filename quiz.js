@@ -9,7 +9,7 @@ function quiz(){
 
 function quizButton() {
     for(let i = 0; i < 10; i++) {
-        drawButton(1000 + ((i%5)*1000), 2500 + (Math.floor(i/5)*1000), buttonSize,String(i));
+        drawButton(850 + ((i%5)*1000), 2400 + (Math.floor(i/5)*1000), buttonSize,String(i));
     }    
 }
 
@@ -24,10 +24,10 @@ function drawButton(x,y,buttonSize,text) {
     ctx.fill();
     ctx.closePath();
 
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "#ffffff";
     //文字のスタイル（大きさ、フォント）を指定
     ctx.font = buttonSize + 'px ZenMaruGothicRegular';
-    ctx.fillText(text, x-100, y+150);
+    ctx.fillText(text, x-100, y+125);
 }
 
 function addQuizClickEventListener() {
