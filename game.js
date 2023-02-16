@@ -20,7 +20,8 @@ function init() {
 
 
 function startGame() {
-    answer = randInt(gamelevel * 5);
+    let int=randInt(gamelevel * 5);
+    answer = int? int: 1;
     drawBallTimer = setInterval(draw, 30);
 }
 

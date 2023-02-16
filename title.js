@@ -3,7 +3,6 @@ document.fonts.ready.then(function () {
     // すべてのフォントが読み込まれた後にのみ実行する必要がある操作を
     // ここに記述します。
     title();
-    header("Count Game");
 
 });
 
@@ -11,7 +10,9 @@ document.fonts.ready.then(function () {
 function title() {
     clearCanvas();
     drawBigButton("Game Start");
+    header("Count Game");
     addBigButtonClickEventListener(level);
+
 }
 
 function addBigButtonClickEventListener(func) {

@@ -117,6 +117,8 @@ function quizResult(userIsCorrect){
         userScore ++;
     }else{
         header("Incorrect!");
+        console.log(answer);
+        console.log(userAns);
     }
 
     if(++quizCount < quizNum){
