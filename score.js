@@ -31,8 +31,8 @@ function addHomeButtonClickEventListener() {
 
 
         const homeButton = {
-            x: 2750, y:3600,
-            w: 100, h: 100   // サイズ
+            x: 2750, y:3400,
+            w: 500, h: 500   // サイズ
         };
 
         const clickhomeButton =
