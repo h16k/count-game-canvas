@@ -11,12 +11,12 @@ document.fonts.ready.then(function () {
 function title() {
     clearCanvas();
     drawBigButton("Game Start");
-    addTitleClickEventListener();
+    addBigButtonClickEventListener(level);
 }
 
-function addTitleClickEventListener() {
+function addBigButtonClickEventListener(func) {
     const cvs = document.getElementById("myCanvas");
-    cvs.addEventListener("click", titleClickEvent = e => {
+    cvs.addEventListener("click", bigButtonClickEvent = e => {
         const rect = e.target.getBoundingClientRect();
 
         // ブラウザ上での座標を求める
@@ -32,18 +32,18 @@ function addTitleClickEventListener() {
             canvasY = Math.floor(viewY / scaleHeight);
 
 
-        const title = {
+        const bigButton = {
             x: 1800, y: 2000,
             w: 2400, h: 800   // サイズ
         };
 
-        const clickTitle =
-            (title.x <= canvasX && canvasX <= title.x + title.w)  // 横方向の判定
-            && (title.y <= canvasY && canvasY <= title.y + title.h)  // 縦方向の判定
+        const clickBigButton =
+            (bigButton.x <= canvasX && canvasX <= bigButton.x + bigButton.w)  // 横方向の判定
+            && (bigButton.y <= canvasY && canvasY <= bigButton.y + bigButton.h)  // 縦方向の判定
 
-        if (clickTitle) {
-            cvs.removeEventListener('click', titleClickEvent);
-            level();
+        if (clickBigButton) {
+            cvs.removeEventListener('click', bigButtonClickEvent);
+            func();
         }
     });
 }

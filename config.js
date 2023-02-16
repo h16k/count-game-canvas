@@ -25,7 +25,7 @@ let ballCount = 0;
 let CorrectCount = 0;
 let drawBallTimer;
 
-let titleClickEvent,levelClickEvent,quizClickEvent;
+let bigButtonClickEvent,levelClickEvent,quizClickEvent;
 
 //quiz.js
 let userAns="";

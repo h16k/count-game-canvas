@@ -84,11 +84,13 @@ function addQuizClickEventListener() {
             userAns = "";
             displayUserAns();
         } else if (clickAns) {
+            cvs.removeEventListener('click', quizClickEvent);
             if (userAns == answer) {
                 quizResult(true);
             } else {
                 quizResult(false);
             }
+            userAns = "";
         }
     });
 }
@@ -110,10 +112,14 @@ function quizResult(userIsCorrect){
     clearCanvas();
     if(userIsCorrect){
         header("Correct!");
-        drawBigButton("▶");
-
     }else{
         header("Incorrect!");
-        drawBigButton("▶");
+    }
+
+    drawBigButton("▶");
+    if(++quizCount < 2){
+        addBigButtonClickEventListener(game);
+    }else{
+        addBigButtonClickEventListener(score);
     }
 }
