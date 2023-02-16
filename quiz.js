@@ -110,16 +110,19 @@ function displayUserAns() {
 
 function quizResult(userIsCorrect){
     clearCanvas();
+    drawBigButton("▶");
+
     if(userIsCorrect){
         header("Correct!");
+        userScore ++;
     }else{
         header("Incorrect!");
     }
 
-    drawBigButton("▶");
-    if(++quizCount < 2){
+    if(++quizCount < quizNum){
         addBigButtonClickEventListener(game);
     }else{
         addBigButtonClickEventListener(score);
     }
+
 }

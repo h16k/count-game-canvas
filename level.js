@@ -6,6 +6,8 @@ function level() {
     header("Level");
     Leveltext();
     addLevelClickEventListener()
+    quizCount = 0;
+    userScore = 0;
 }
 
 function drawLevel() {

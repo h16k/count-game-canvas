@@ -36,3 +36,4 @@ let buttonxs = [];
 let buttonys = [];
 let quizCount = 0;
 let userScore = 0;
+let quizNum = 2;

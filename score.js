@@ -2,8 +2,7 @@
 
 function score(){
     clearCanvas();
+    drawBigButton(String((userScore/quizCount)*100) + " %");
     header("Score");
-    drawBigButton(String(Math.floor(userScore/quizCount*100)) + " %");
-    quizCount = 0;
-    userScore = 0;
+
 }
