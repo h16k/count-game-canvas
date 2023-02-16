@@ -29,6 +29,13 @@ let CorrectCount = 0;
 let drawBallTimer;
 
 
-let buttonSize = 350;
 
 let titleClickEvent,levelClickEvent,quizClickEvent;
+
+//quiz.js
+let userAns="";
+let buttonRadius = 350;
+let buttonBaseX = 850;
+let buttonBaseY = 2700;
+let buttonxs = [];
+let buttonys = [];
