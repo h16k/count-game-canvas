@@ -1,9 +1,7 @@
-/*color: 
-ball:#0095d9
-box:#a0d8ef
-
-
-*/
+let color = {
+    ball: "#0095d9",
+    box: "#a0d8ef"
+} 
 
 //ボールの大きさを設定
 let ballRadius = 150;
@@ -24,11 +22,8 @@ let s_wait, e_wait;
 let gamelevel;
 let answer;
 let ballCount = 0;
-let quizCount = 0;
 let CorrectCount = 0;
 let drawBallTimer;
-
-
 
 let titleClickEvent,levelClickEvent,quizClickEvent;
 
@@ -39,3 +34,5 @@ let buttonBaseX = 850;
 let buttonBaseY = 2700;
 let buttonxs = [];
 let buttonys = [];
+let quizCount = 0;
+let userScore = 0;

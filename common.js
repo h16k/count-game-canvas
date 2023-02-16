@@ -30,6 +30,19 @@ function header(text, line = true) {
     ctx.fillText(text, (canvas.width - textWidth) / 2, 1100);
 }
 
+function drawBigButton(text) {
+    drawsq(1500, 500, 3000, 1000, 200, "#a0d8ef");
+    drawsq(1550, 550, 2900, 900, 150, "#ffffff");
+
+    drawsq(1800, 2000, 2400, 800, 200, "#a8c97f");
+
+    ctx.font = '350px ZenMaruGothicRegular';
+    //文字の色を指定
+    ctx.fillStyle = '#ffffff';
+    let textWidth = ctx.measureText(text).width;
+    ctx.fillText("Game Start", (canvas.width - textWidth) / 2, 2500);
+}
+
 //１つの整数をランダムに作る
 function randInt(max) {
     return Math.floor(Math.random() * max);

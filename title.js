@@ -10,25 +10,8 @@ document.fonts.ready.then(function () {
 
 function title() {
     clearCanvas();
-    drawTitle();
-    drawTitleText() 
+    drawBigButton("Game Start");
     addTitleClickEventListener();
-}
-
-function drawTitle() {
-    drawsq(1500, 500, 3000, 1000, 200, "#a0d8ef");
-    drawsq(1550, 550, 2900, 900, 150, "#ffffff");
-
-    drawsq(1800, 2000, 2400, 800, 200, "#a8c97f");
-}
-
-function drawTitleText() {
-    let text = "Game Start"
-    ctx.font = '350px ZenMaruGothicRegular';
-    //文字の色を指定
-    ctx.fillStyle = '#ffffff';
-    let textWidth = ctx.measureText(text).width;
-    ctx.fillText("Game Start", (canvas.width - textWidth) / 2, 2500);
 }
 
 function addTitleClickEventListener() {

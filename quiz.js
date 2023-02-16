@@ -85,9 +85,9 @@ function addQuizClickEventListener() {
             displayUserAns();
         } else if (clickAns) {
             if (userAns == answer) {
-                console.log("correct");
+                quizResult(true);
             } else {
-                console.log("fault");
+                quizResult(false);
             }
         }
     });
@@ -106,4 +106,14 @@ function displayUserAns() {
     ctx.fillText("Answer", 3850, 1850);
 }
 
+function quizResult(userIsCorrect){
+    clearCanvas();
+    if(userIsCorrect){
+        header("Correct!");
+        drawBigButton("▶");
 
+    }else{
+        header("Incorrect!");
+        drawBigButton("▶");
+    }
+}
